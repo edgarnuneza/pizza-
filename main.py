@@ -19,10 +19,17 @@ def opcionIngredientes():
             break
 
         datos.mostrarIngredientes()
-
+        print(datos.listaIngredientes.__len__() + 1, 'Crear un nuevo ingrediente')
         numeroIngrediente = int(input('Selecciona un ingrediente \n'))
 
-        pizza.agregarIngrediente(datos.listaIngredientes[numeroIngrediente - 1])
+        if numeroIngrediente == datos.listaIngredientes.__len__() + 1:
+            ingrediente = datos.añadirIngrediente()
+        else:
+            ingrediente = datos.listaIngredientes[numeroIngrediente - 1]
+
+        print(ingrediente.nombre, ingrediente.precio)
+
+        pizza.agregarIngrediente(ingrediente)
 
 def opcionPizzas():
     tamaño = input('Ingresa el tamaño de la pizza\n')

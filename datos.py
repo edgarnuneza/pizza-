@@ -41,3 +41,14 @@ class Datos:
 
         return cliente
 
+    def añadirIngrediente(self):
+        self.nombre = input('Ingresa el nombre del ingrediente\n')
+        self.precio = int(input('Ingresa el precio del ingrediente\n'))
+
+        ingrediente = Ingrediente(self.nombre, self.precio)
+        self.listaIngredientes.append(ingrediente)
+
+        return ingrediente
+
+
+
